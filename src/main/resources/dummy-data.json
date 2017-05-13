@@ -1,0 +1,62 @@
+[
+    {
+        "_class": "com.epam.receipt.dto.ItemDetails",
+        "id": 1,
+        "name": "book",
+        "category": {
+            "id": 1,
+            "name": "standard",
+            "taxPercentage": 0.175
+        }
+    },
+    {
+        "_class": "com.epam.receipt.dto.ItemDetails",
+        "id": 2,
+        "name": "music CD",
+        "category": {
+            "id": 2,
+            "name": "cd",
+            "taxPercentage": 0.1875
+        }
+    },
+    {
+        "_class": "com.epam.receipt.dto.ItemDetails",
+        "id": 3,
+        "name": "chocolate snack",
+        "category": {
+            "id": 1,
+            "name": "standard",
+            "taxPercentage": 0.175
+        }
+    },
+    {
+        "_class": "com.epam.receipt.dto.ItemDetails",
+        "id": 4,
+        "name": "bottle of wine",
+        "category": {
+            "id": 1,
+            "name": "standard",
+            "taxPercentage": 0.175
+        }
+    },
+    {
+        "_class": "com.epam.receipt.dto.ItemDetails",
+        "id": 5,
+        "name": "tooth ache pills",
+        "category": {
+            "id": 3,
+            "name": "medical",
+            "taxPercentage": 0
+        }
+    },
+    {
+        "_class": "com.epam.receipt.dto.ItemDetails",
+        "id": 6,
+        "name": "box of pins",
+        "category": {
+            "id": 1,
+            "name": "standard",
+            "taxPercentage": 0.175
+        }
+    }
+]
