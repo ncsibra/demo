@@ -3,18 +3,23 @@ package com.epam.receipt.model;
 import java.math.BigDecimal;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.Range;
+
 public class RequestItem {
 
     @NotNull(message = "receipt item id can't be null")
+    @Range(min = 1)
     private Integer id;
 
     @NotNull(message = "receipt item name can't be null")
     private String name;
 
     @NotNull(message = "receipt item quantity can't be null")
+    @Range(min = 1)
     private Integer quantity;
 
     @NotNull(message = "receipt item price can't be null")
+    @Range(min = 0)
     private BigDecimal price;
 
     public Integer getId() {

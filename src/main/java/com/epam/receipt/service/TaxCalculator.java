@@ -8,16 +8,17 @@ import org.springframework.stereotype.Component;
 
 import com.epam.receipt.dto.ItemDetails;
 import com.epam.receipt.model.RequestItem;
-import com.epam.receipt.value.TaxPrice;
 
 @Component
 public class TaxCalculator {
 
+    private static final BigDecimal ONE_HUNDRED = new BigDecimal(100);
+
     public TaxPrice calculate(RequestItem item, ItemDetails itemDetails) {
         BigDecimal price = item.getPrice();
         BigDecimal quantity = new BigDecimal(item.getQuantity());
-        BigDecimal taxPercentage = itemDetails.getCategory().getTaxPercentage();
-        BigDecimal tax = price.multiply(taxPercentage);
+        BigDecimal taxMultiplier = itemDetails.getCategory().getTaxPercentage().divide(ONE_HUNDRED);
+        BigDecimal tax = price.multiply(taxMultiplier);
         BigDecimal taxAmount = tax.multiply(quantity);
         BigDecimal priceAmount = price.add(tax).multiply(quantity);
 

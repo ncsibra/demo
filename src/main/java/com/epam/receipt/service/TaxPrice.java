@@ -1,4 +1,4 @@
-package com.epam.receipt.value;
+package com.epam.receipt.service;
 
 import java.math.BigDecimal;
 

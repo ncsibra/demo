@@ -7,9 +7,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({"name", "quantity", "price"})
 public class TaxItem {
 
-    private String name;
-    private Integer quantity;
-    private BigDecimal price;
+    private final String name;
+    private final Integer quantity;
+    private final BigDecimal price;
 
     private TaxItem(String name, Integer quantity, BigDecimal price) {
         this.name = name;

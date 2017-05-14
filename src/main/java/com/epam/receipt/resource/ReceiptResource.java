@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.epam.receipt.exception.InvalidRequestException;
 import com.epam.receipt.model.ReceiptRequest;
 import com.epam.receipt.model.TaxReceipt;
 import com.epam.receipt.service.ReceiptService;
@@ -28,7 +29,7 @@ public class ReceiptResource {
     @RequestMapping(path = "/receipt", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE, method = POST)
     public TaxReceipt createReceipt(@Valid @RequestBody ReceiptRequest request, BindingResult result) {
         if (result.hasFieldErrors()) {
-            // throw exception
+            throw new InvalidRequestException(result);
         }
 
         return service.createTaxReceipt(request.getItems());

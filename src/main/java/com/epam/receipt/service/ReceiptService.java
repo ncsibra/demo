@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 
 import com.epam.receipt.dao.ItemRepository;
 import com.epam.receipt.dto.ItemDetails;
+import com.epam.receipt.exception.ItemNotFoundException;
 import com.epam.receipt.model.RequestItem;
 import com.epam.receipt.model.TaxItem;
 import com.epam.receipt.model.TaxReceipt;
-import com.epam.receipt.value.TaxPrice;
 
 @Service
 public class ReceiptService {
@@ -32,7 +32,7 @@ public class ReceiptService {
         BigDecimal total = new BigDecimal(0);
 
         for (RequestItem item : requestItems) {
-            ItemDetails itemDetails = itemRepository.findById(item.getId());
+            ItemDetails itemDetails = getItemDetails(item);
             TaxPrice taxPrice = taxCalculator.calculate(item, itemDetails);
 
             taxItems.add(createTaxItem(item, taxPrice));
@@ -46,6 +46,15 @@ public class ReceiptService {
                 .withSalesTaxes(salesTaxes)
                 .withTotal(total)
                 .build();
+    }
+
+    private ItemDetails getItemDetails(RequestItem item) {
+        ItemDetails details = itemRepository.findById(item.getId());
+        if (details == null) {
+            throw new ItemNotFoundException(item);
+        }
+
+        return details;
     }
 
     private TaxItem createTaxItem(RequestItem item, TaxPrice taxPrice) {

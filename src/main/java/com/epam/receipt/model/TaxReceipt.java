@@ -9,10 +9,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonPropertyOrder({"items", "sales taxes", "total"})
 public class TaxReceipt {
 
-    private List<TaxItem> items;
+    private final List<TaxItem> items;
     @JsonProperty("sales taxes")
-    private BigDecimal salesTaxes;
-    private BigDecimal total;
+    private final BigDecimal salesTaxes;
+    private final BigDecimal total;
 
     private TaxReceipt(List<TaxItem> items, BigDecimal salesTaxes, BigDecimal total) {
         this.items = items;
