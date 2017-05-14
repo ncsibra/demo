@@ -3,13 +3,14 @@
 	"info": {
 		"name": "Receipt demo",
 		"_postman_id": "3dc66562-205a-ac1e-0ec7-a26cfdaff664",
+		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Example 1",
 			"request": {
-				"url": "http://localhost:8080/receipt",
+				"url": "http://localhost:8090/receipt",
 				"method": "POST",
 				"header": [
 					{
@@ -21,6 +22,26 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\n  \"items\": [\n    {\n      \"id\": 1,\n      \"name\": \"book\",\n      \"quantity\": 1,\n      \"price\": 29.49\n    },\n    {\n      \"id\": 2,\n      \"name\": \"music cd\",\n      \"quantity\": 2,\n      \"price\": 15.99\n    },\n    {\n      \"id\": 3,\n      \"name\": \"chocolate snack\",\n      \"quantity\": 1,\n      \"price\": 0.75\n    }\n  ]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Example 2",
+			"request": {
+				"url": "http://localhost:8090/receipt",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"items\": [\n    {\n      \"id\": 4,\n      \"name\": \"bottle of wine\",\n      \"quantity\": 1,\n      \"price\": 20.99\n    },\n    {\n      \"id\": 5,\n      \"name\": \"tooth ache pills\",\n      \"quantity\": 1,\n      \"price\": 4.15\n    },\n    {\n      \"id\": 6,\n      \"name\": \"box of pins\",\n      \"quantity\": 1,\n      \"price\": 11.25\n    },\n    {\n      \"id\": 2,\n      \"name\": \"music cd\",\n      \"quantity\": 1,\n      \"price\": 14.99\n    }\n  ]\n}"
 				},
 				"description": ""
 			},
