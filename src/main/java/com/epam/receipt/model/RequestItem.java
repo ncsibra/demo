@@ -1,9 +1,9 @@
 package com.epam.receipt.model;
 
-import java.math.BigDecimal;
-import javax.validation.constraints.NotNull;
-
 import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 public class RequestItem {
 

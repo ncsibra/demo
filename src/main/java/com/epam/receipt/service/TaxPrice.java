@@ -20,8 +20,8 @@ public class TaxPrice {
         return priceAmount;
     }
 
-
     public static class Builder {
+
         private BigDecimal taxAmount;
         private BigDecimal priceAmount;
 

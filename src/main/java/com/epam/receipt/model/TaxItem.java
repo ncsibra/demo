@@ -1,10 +1,10 @@
 package com.epam.receipt.model;
 
-import java.math.BigDecimal;
-
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder({"name", "quantity", "price"})
+import java.math.BigDecimal;
+
+@JsonPropertyOrder({ "name", "quantity", "price" })
 public class TaxItem {
 
     private final String name;
@@ -29,8 +29,8 @@ public class TaxItem {
         return price;
     }
 
-
     public static class Builder {
+
         private String name;
         private Integer quantity;
         private BigDecimal price;

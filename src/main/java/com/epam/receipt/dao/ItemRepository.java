@@ -1,8 +1,7 @@
 package com.epam.receipt.dao;
 
-import org.springframework.data.keyvalue.repository.KeyValueRepository;
-
 import com.epam.receipt.dto.ItemDetails;
+import org.springframework.data.keyvalue.repository.KeyValueRepository;
 
 public interface ItemRepository extends KeyValueRepository<ItemDetails, Integer> {
 

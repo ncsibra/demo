@@ -1,8 +1,8 @@
 package com.epam.receipt.dto;
 
-import java.math.BigDecimal;
-
 import org.springframework.data.annotation.Id;
+
+import java.math.BigDecimal;
 
 public class ItemCategory {
 

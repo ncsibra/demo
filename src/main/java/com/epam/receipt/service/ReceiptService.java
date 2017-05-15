@@ -1,18 +1,17 @@
 package com.epam.receipt.service;
 
-import java.math.BigDecimal;
-import java.util.LinkedList;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.epam.receipt.dao.ItemRepository;
 import com.epam.receipt.dto.ItemDetails;
 import com.epam.receipt.exception.ItemNotFoundException;
 import com.epam.receipt.model.RequestItem;
 import com.epam.receipt.model.TaxItem;
 import com.epam.receipt.model.TaxReceipt;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.util.LinkedList;
+import java.util.List;
 
 @Service
 public class ReceiptService {
@@ -41,11 +40,7 @@ public class ReceiptService {
             total = total.add(taxPrice.getPriceAmount());
         }
 
-        return new TaxReceipt.Builder()
-                .withItems(taxItems)
-                .withSalesTaxes(salesTaxes)
-                .withTotal(total)
-                .build();
+        return new TaxReceipt.Builder().withItems(taxItems).withSalesTaxes(salesTaxes).withTotal(total).build();
     }
 
     private ItemDetails getItemDetails(RequestItem item) {
@@ -58,10 +53,6 @@ public class ReceiptService {
     }
 
     private TaxItem createTaxItem(RequestItem item, TaxPrice taxPrice) {
-        return new TaxItem.Builder()
-                .withName(item.getName())
-                .withPrice(taxPrice.getPriceAmount())
-                .withQuantity(item.getQuantity())
-                .build();
+        return new TaxItem.Builder().withName(item.getName()).withPrice(taxPrice.getPriceAmount()).withQuantity(item.getQuantity()).build();
     }
 }

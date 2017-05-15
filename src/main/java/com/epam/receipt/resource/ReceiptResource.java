@@ -1,20 +1,19 @@
 package com.epam.receipt.resource;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
-import javax.validation.Valid;
-
+import com.epam.receipt.exception.InvalidRequestException;
+import com.epam.receipt.model.ReceiptRequest;
+import com.epam.receipt.model.TaxReceipt;
+import com.epam.receipt.service.ReceiptService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.epam.receipt.exception.InvalidRequestException;
-import com.epam.receipt.model.ReceiptRequest;
-import com.epam.receipt.model.TaxReceipt;
-import com.epam.receipt.service.ReceiptService;
+import javax.validation.Valid;
+
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 public class ReceiptResource {

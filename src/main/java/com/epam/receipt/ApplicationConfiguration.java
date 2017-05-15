@@ -17,7 +17,7 @@ public class ApplicationConfiguration {
         Resource sourceData = new ClassPathResource("dummy-data.json");
 
         Jackson2RepositoryPopulatorFactoryBean factory = new Jackson2RepositoryPopulatorFactoryBean();
-        factory.setResources(new Resource[]{sourceData});
+        factory.setResources(new Resource[]{ sourceData });
 
         return factory;
     }
